@@ -1,5 +1,5 @@
-import React from 'React';
-import Link from 'react-router';
+import React from 'react';
+import { Link } from 'react-router';
 import CSSTransitionGroup from 'react-addons-css-transition-group';
 
 const Photo = React.createClass({
@@ -10,7 +10,7 @@ const Photo = React.createClass({
             <figure className="grid-figure">
                 <div className="grid-photo-wrap">
                     <Link to={`/view/${post.code}`}>
-                        <img stc={post.display_src} alt={post.caption} className="grid-photo" />
+                        <img src={post.display_src} alt={post.caption} className="grid-photo" />
                     </Link>
 
                     <CSSTransitionGroup transitionName="like"
@@ -24,7 +24,7 @@ const Photo = React.createClass({
                 <figcaption>
                     <p>{post.caption}</p>
                     <div className="likes">
-                        <button className="likes">$hearts; {post.likes}</button>
+                        <button onClick={this.props.increment.bind(null, i)} className="likes">&hearts; {post.likes}</button>
                         <Link to={`/view/${post.code}`}>
                             <span className="comment-count">
                                 <span className="speech-bubble"></span>
