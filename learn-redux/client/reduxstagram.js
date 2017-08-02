@@ -4,9 +4,28 @@ import css from './styles/style.styl';
 import App from './components/App';
 import Single from './components/Single';
 import PhotoGrid from './components/PhotoGrid';
+
 import { Router, Route, IndexRoute, browserHistory } from 'react-router';
 import { Provider } from 'react-redux';
 import store, { history } from './store';
+
+import Raven from 'raven-js';
+import { sentry_url, logException } from './data/config';
+
+// Raven.config(sentry_url, {
+//     tags: {
+//         git_commit: 'asdfes',
+//         userLevel: 'editor'
+//     }
+// }).install();
+
+// logException(new Error('download failed!'), {
+//     email: 'seankenjicali@gmail.com'
+// });
+
+// Raven.captureMessage('message here');
+// Sets up a report bug dialog on page
+// Raven.showReportDialog();
 
 const router = (
     <Provider store={store}>
