@@ -11,9 +11,8 @@ class EditItem extends Component {
       this.handleSubmit = this.handleSubmit.bind(this);
       this.state = {value: '' };
   }
-
   componentDidMount(){
-    axios.get('http://localhost:4200/items/edit/'+this.props.match.params.id)
+    axios.get('http://localhost:4200/items/edit/' + this.props.match.params.id)
     .then(response => {
       this.setState({ value: response.data});
     })
@@ -28,7 +27,7 @@ class EditItem extends Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.addItemService.updateData(this.state.value,this.props.match.params.id);
+    this.addItemService.updateData(this.state.value, this.props.match.params.id);
     this.props.history.push('/index');
   }
 
