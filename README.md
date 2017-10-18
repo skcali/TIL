@@ -1,0 +1,1 @@
+Repository holding little things I've been learning in JavaScript and C#. Mostly getting to know certain frameworks/technolgies or getting back to fundamentals in both languages.
